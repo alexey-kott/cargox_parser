@@ -37,7 +37,7 @@ def get_driver(headless: bool =False) -> Chrome:
     options = ChromeOptions()
 
     capabilities = DesiredCapabilities.CHROME
-    options.add_argument("--window-position=1920,50")
+    # options.add_argument("--window-position=1920,50")
     options.add_argument("--window-size=1920,1000")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
@@ -130,7 +130,7 @@ def parse_orders(driver: Chrome, order_paths: List[str]) -> Tuple[List[OrderInfo
         print(order_info, end='\n\n')
 
         orders_info.append(order_info)
-        sleep(1)
+        sleep(0.5)
 
     return orders_info, fields
 
